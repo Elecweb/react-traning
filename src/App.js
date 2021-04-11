@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import Route from "./Route";
-import { BrowserRouter } from "react-router-dom";
-import DialogBeerDetial from "./pages/DialogBeerDetial";
-import "antd/dist/antd.css";
-import "@ant-design/icons";
-import { Provider } from "react-redux";
-import store from "./store";
-import BeerFavoriteProvider from "./components/BeerFav";
+import React, { useEffect } from 'react';
+import Route from './Route';
+import { BrowserRouter } from 'react-router-dom';
+import DialogBeerDetial from './pages/DialogBeerDetial';
+import 'antd/dist/antd.css';
+import '@ant-design/icons';
+import { Provider } from 'react-redux';
+import store from './store';
+import BeerFavoriteProvider from './components/BeerFav';
 
 function App() {
   useEffect(() => {
