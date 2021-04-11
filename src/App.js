@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Route from "./Route";
+import { BrowserRouter } from "react-router-dom";
+import DialogBeerDetial from "./pages/DialogBeerDetial";
+import "antd/dist/antd.css";
+import "@ant-design/icons";
+import { Provider } from "react-redux";
+import store from "./store";
+import BeerFavoriteProvider from "./components/BeerFav";
 
 function App() {
+  useEffect(() => {
+    // console.log("process.env.REACT_APP_GG_KEY", process.env.REACT_APP_GG_KEY);
+    return () => {};
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BeerFavoriteProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Route />
+          <DialogBeerDetial />
+        </BrowserRouter>
+      </Provider>
+    </BeerFavoriteProvider>
   );
 }
 
